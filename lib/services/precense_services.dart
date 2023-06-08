@@ -20,10 +20,10 @@ class PrecenseServices {
     print('Data from precense Services : $userData');
     dynamic tokens = userData['token'];
     final Uri url = Uri.parse(
-        '${dotenv.env['API_BASE_URL']}/mobile/absencies?date=$filter');
+        '${dotenv.env['API_BASE_URL']}/absen?date=$filter');
     try {
       final response =
-          await http.get(url, headers: {'x-access-token': '$tokens'});
+          await http.get(url, headers: {'x-get-token': '$tokens'});
       if (response.statusCode == 200) {
         return PrecenseModel.fromJson(jsonDecode(response.body));
       } else {

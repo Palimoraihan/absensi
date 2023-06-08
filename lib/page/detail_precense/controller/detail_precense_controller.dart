@@ -69,7 +69,7 @@ class DetailPrecenseController extends GetxController {
     var userDataLocal = box.read('userData');
     var userId = userDataLocal['_id'];
     final imageUrl =
-        'https://api-kepegawaian.qtera.co.id/files/users/$userId/$nameImageOut';
+        'https://sencored/$userId/$nameImageOut';
     try {
       String savePath = await getFilePath(nameImageOut);
       await dio.download(

@@ -91,7 +91,7 @@ class PrecenseOutController extends GetxController {
   }
 
   Future<dynamic> uploadData(context) async {
-    final url = Uri.parse('${dotenv.env['API_BASE_URL']}/mobile/absencies');
+    final url = Uri.parse('${dotenv.env['API_BASE_URL']}/absensi');
     isLoading(true);
     try {
       var stream = http.ByteStream(filePick!.openRead());

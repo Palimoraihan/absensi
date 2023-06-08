@@ -136,7 +136,7 @@ class PrecenseController extends GetxController {
   Future<dynamic> uploadData(context) async {
     isLoading(true);
     print('upload data $getToken & $getName');
-    final url = Uri.parse('${dotenv.env['API_BASE_URL']}/mobile/absencies');
+    final url = Uri.parse('${dotenv.env['API_BASE_URL']}/absensi');
 
     try {
       var stream = http.ByteStream(filePick!.openRead());
@@ -148,7 +148,7 @@ class PrecenseController extends GetxController {
       if (dropDownVal != 'Pilih') {
         var request = http.MultipartRequest('POST', url)
           ..headers.addAll({
-            "x-access-token": "$getToken",
+            "x-get-token": "$getToken",
             "Content-Type": "multipart/form-data"
           })
           ..files.add(multipart)

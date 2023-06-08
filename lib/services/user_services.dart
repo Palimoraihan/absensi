@@ -18,9 +18,9 @@ class UserServices {
 
     try {
       final url =
-          Uri.parse('${dotenv.env['API_BASE_URL']}/employees/$employeeId');
+          Uri.parse('${dotenv.env['API_BASE_URL']}/pegawai/$employeeId');
       final response =
-          await http.get(url, headers: {'x-access-token': '$tokens'});
+          await http.get(url, headers: {'x-get-token': '$tokens'});
       if (response.statusCode == 200) {
         print(response.statusCode);
         return UserModel.fromJson(jsonDecode(response.body));
